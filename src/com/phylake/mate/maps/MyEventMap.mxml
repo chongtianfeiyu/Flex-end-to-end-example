@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EventMap xmlns:mx="http://www.adobe.com/2006/mxml"
+		  xmlns="http://mate.asfusion.com/"
+		  xmlns:services="com.phylake.both.services.*">
+
+	<mx:Script>
+		<![CDATA[
+
+			import com.phylake.mate.business.*;
+			import com.phylake.both.events.*;
+
+		]]>
+	</mx:Script>
+
+	<services:Services id="svc"/>
+
+	<EventHandlers type="{MyEvent.DO_SOMETHING}">
+		<RemoteObjectInvoker instance="{svc.myRO}" method="read" arguments="{event.data}">
+			<resultHandlers>
+				<PropertySetter generator="{MyManager}" source="{resultObject}" targetKey="someProperty"/>
+			</resultHandlers>
+		</RemoteObjectInvoker>
+	</EventHandlers>
+
+</EventMap>

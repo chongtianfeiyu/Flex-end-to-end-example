@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+				xmlns:maps="com.phylake.mate.maps.*"
+				layout="absolute"
+			    creationComplete="handleCreationComplete()">
+				
+	<mx:Script>
+		<![CDATA[
+			import com.phylake.both.events.MyEvent;
+		
+			private function handleCreationComplete() : void {
+				var me : MyEvent = new MyEvent(MyEvent.DO_SOMETHING);
+				me.data = 1;//read id of 1 in persistence
+				dispatchEvent(me);
+			}
+		]]>
+	</mx:Script>
+	
+	<maps:MyEventMap/>
+</mx:Application>

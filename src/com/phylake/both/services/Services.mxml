@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Object xmlns:mx="http://www.adobe.com/2006/mxml">
+
+	<!-- source must be the same name you give to $server-setClass() in PHP -->
+	<mx:RemoteObject id="myRO" source="MyDAO" destination="amf-endpoint"/>
+
+</mx:Object>

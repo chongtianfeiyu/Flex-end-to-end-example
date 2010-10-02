@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+				xmlns:services="com.phylake.both.services.*"
+				xmlns:control="com.phylake.cairngorm.control.*"
+				layout="absolute"
+			    creationComplete="handleCreationComplete()">
+				
+	<mx:Script>
+		<![CDATA[
+			import com.phylake.both.events.MyEvent;
+		
+			private function handleCreationComplete() : void {
+				var me : MyEvent = new MyEvent(MyEvent.DO_SOMETHING);
+				me.data = 1;//read id of 1 in persistence
+				me.dispatch();
+			}
+		]]>
+	</mx:Script>
+	
+	<services:Services/>
+	<control:Controller/>
+</mx:Application>
